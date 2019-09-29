@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ServerMw</class>
+ <widget class="QMainWindow" name="ServerMw">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Сервер сбора и хранения информации</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout" columnstretch="10,0">
+    <property name="leftMargin">
+     <number>2</number>
+    </property>
+    <property name="topMargin">
+     <number>2</number>
+    </property>
+    <property name="rightMargin">
+     <number>2</number>
+    </property>
+    <property name="bottomMargin">
+     <number>2</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QTextBrowser" name="log"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="TasksWidget" name="tasks" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>350</width>
+        <height>0</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="serverMenu">
+    <property name="title">
+     <string>Сервер</string>
+    </property>
+    <addaction name="exit"/>
+   </widget>
+   <widget class="QMenu" name="importMenu">
+    <property name="title">
+     <string>Импорт</string>
+    </property>
+    <addaction name="importFromXl"/>
+   </widget>
+   <widget class="QMenu" name="view">
+    <property name="title">
+     <string>Вид</string>
+    </property>
+    <addaction name="showTasks"/>
+   </widget>
+   <addaction name="serverMenu"/>
+   <addaction name="view"/>
+   <addaction name="importMenu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="importFromXl">
+   <property name="text">
+    <string>Загрузить данные из xlsx, xl, xlsb</string>
+   </property>
+  </action>
+  <action name="showTasks">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Показать задачи</string>
+   </property>
+  </action>
+  <action name="exit">
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TasksWidget</class>
+   <extends>QWidget</extends>
+   <header>tasks_widget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>showTasks</sender>
+   <signal>triggered(bool)</signal>
+   <receiver>tasks</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>792</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>exit</sender>
+   <signal>triggered()</signal>
+   <receiver>ServerMw</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

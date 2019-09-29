@@ -1,0 +1,44 @@
+{
+    "id": "суммарный и средний возраст",
+    "template": [
+        {
+            "name": "Суммарный коэффициент рождаемости, число родившихся на 1 женщину",
+            "out": "total_and_average_age_1",
+            "direction": "row",
+            "row": {
+                "start_row": "4",
+                "start_column": "0",
+                "end": "-1",
+                "type": "area",
+                "level": "1",
+                "depth": "10"
+            }, 
+            "column":{
+                "start_row": "3",
+                "start_column": "head:Суммарный коэффициент рождаемости, число родившихся на 1 женщину",
+                "end": "head:Суммарный коэффициент рождаемости, число родившихся на 1 женщину",
+                "type": "number"
+            }
+        },
+        {
+            "name": "Средний возраст матери при рождении, лет",
+            "out": "total_and_average_age_2",
+            "direction": "row",
+            "row": {
+                "start_row": "4",
+                "start_column": "0",
+                "end": "-1",
+                "type": "area",
+                "level": "1",
+                "depth": "10"
+            }, 
+            "column":{
+                "start_row": "3",
+                "start_column": "head:Средний возраст матери при рождении, лет",
+                "end": "head:Средний возраст матери при рождении, лет",
+                "type": "number"
+            }
+        }
+    ]
+}
+

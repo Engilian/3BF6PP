@@ -1,0 +1,1 @@
+DISTFILES += templates/*
